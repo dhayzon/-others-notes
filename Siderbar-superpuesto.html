@@ -1,0 +1,66 @@
+	<script type="text/javascript" src="./jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			$('.fm-responsive-icon ').click(function(e){
+				e.preventDefault();
+				$('.fm-responsive-icon ').toggleClass('open');
+				$(".fm-float-siderbar").toggleClass("open-siderbar");
+			});
+		});
+
+	</script>
+	
+<a href="#" class="fm-responsive-icon transition_2 "><span class="fm-icon"></span></a>
+
+<section>
+		<div class="fm-float-siderbar">
+			<span class="fm-float-siderbar-head"></span>
+			<ul>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+				<li>Ipsum es simplemente el texto</li>
+			</ul>
+
+		</div>
+	</section>
+	
+	<style>
+	
+/****siderbar open***/
+.fm-float-siderbar.open-siderbar {
+    left: 0;
+}
+.fm-float-siderbar {
+    background-color: #0f1010;
+    left: -100%;
+    overflow: auto;
+    max-width: 430px;
+    width: 100%;
+}
+.fm-float-siderbar {
+    height: 100%;
+    left: -301px;
+    position: fixed;
+    top: 0;
+    transition: left 0.4s ease;
+    -moz-transition: left 0.4s ease;
+    -o-transition: left 0.4s ease;
+    -webkit-transition: left 0.4s ease;
+    -ms-transition: left 0.4s ease;
+    width: 300px;
+    z-index: 100;
+}
+span.fm-float-siderbar-head {
+  height: 30px;
+  display: block;
+  background: rgb(74, 74, 74);
+  padding: 20px;
+}
+/***end**/
+	</style>
