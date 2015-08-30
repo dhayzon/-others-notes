@@ -1,0 +1,42 @@
+
+<!--requiere jquery cookie pluging-->
+<div class="boardIndex_forums" id="category_1"> 
+<div class="header"><a href="javascript:void(0);" class="hide_icon"><i class="icon-down-open-big"></i></a></div>
+<div class="content">text</div>
+</div>
+<script>
+$(function($) {
+    //clase del icono para dar click
+    $('div.header .hide_icon').click(function() {
+        // obtenemos el id de contenedor principal
+        var id = $(this).closest('.boardIndex_forums').attr('id');
+        
+        // realizamos una correcta estructura div>parent > div> que se oculta
+        var dhz = $('#' +id+ ' .content');
+         
+        // iniciamos la funcion para mostar ocultar contenido >
+        dhz.slideToggle(function() {
+            // generamos una condicion para las cookies
+            if (dhz.css('display') == 'block'){
+                // creamosuna cookie con el valor 1 y 0  
+                $.cookie(id, 1, {expires: 365});
+               
+            }else{ 
+
+                $.cookie(id, 0, {expires: 365});
+                
+              }
+        });
+    });
+    $("body").find(".boardIndex_forums").each(function(){
+    var id = $(this).attr('id'); 
+    var dhz = $('#'+id+' .content'); 
+    if ($.cookie(id) == null) 
+        dhz.css("display", "none");   
+    else if ($.cookie(id) == 1) 
+        dhz.css("display", "block");    
+    else if ($.cookie(id) == 0)
+        dhz.css("display", "none");
+});
+});
+</scrip>
