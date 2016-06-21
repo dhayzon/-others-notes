@@ -1,0 +1,29 @@
+<script> $(document).ready(function(){
+  var pause = $.cookie('pause_cookie');
+  var id = $('#musica_dz');
+  if(id.length>0){
+  if (pause == 'pause') {
+    $('#musica_dz')[0].pause();
+
+  }else if(pause !='pause'){
+    $('#musica_dz')[0].play();
+  }
+  $('#pause').click(function(){
+    $('#musica_dz')[0].pause();
+    $.cookie('pause_cookie','pause');
+  }); 
+  $('#play').click(function(){
+    $('#musica_dz')[0].play();
+    $.cookie('pause_cookie',null);
+  }); 
+  }
+});
+</script>
+<div class="block_siderbar_contet"><h2>MUSIC</h2>
+	    <video id="musica_dz" controls="false" autoplay="true" width="100%" height="40" name="media">
+          <source src="http://stream.nightcoreradio.com:9040/main_stream" type="audio/aac">
+          <source src="http://stream.nightcoreradio.com:9040/main_stream" type="video/ogg">
+          <source src="http://stream.nightcoreradio.com:9040/main_stream" type="audio/mp4">
+          </video>
+          <span id="pause" class="title-addons">PAUSE</span><span id="play" class="title-addons floatright">PLAY</span>
+        </div>
